@@ -1,8 +1,11 @@
+import { Route, Routes, useLocation } from "react-router-dom";
 import PillNav from "./components/PillNav";
 import "./index.css";
 import Homepage from "@/pages/Homepage";
+import About from "@/pages/About";
 
 function App() {
+  const location = useLocation();
   return (
     <>
       <PillNav
@@ -15,13 +18,14 @@ function App() {
         activeHref="/"
         className="custom-nav"
         ease="power2.easeOut"
-        baseColor="#000000"
-        pillColor="#ffffff"
         hoveredPillTextColor="#ffffff"
         pillTextColor="#000000"
         initialLoadAnimation={false}
       />
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/about" element={<About />}></Route>
+      </Routes>
     </>
   );
 }
