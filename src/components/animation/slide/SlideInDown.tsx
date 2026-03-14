@@ -10,7 +10,7 @@ function SlideInDown<T extends React.ElementType = "div">({
   const MotionComponent = motion(Component);
   return (
     <MotionComponent
-      initial={{ opacity: 0, y: -100 }}
+      initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       style={{ display: as === "span" ? "inline-block" : undefined }}

@@ -1,4 +1,3 @@
-import Particles from "@/components/animation/Particles";
 import ShuffleText from "@/components/animation/ShuffleText";
 import SlideInDown from "@/components/animation/slide/SlideInDown";
 import SlideInLeft from "@/components/animation/slide/SlideInLeft";
@@ -12,23 +11,12 @@ const MotionButton = motion(Button);
 
 function Homepage() {
   return (
-    <div className="relative h-screen">
-      <Particles
-        particleColors={["#0a0024"]}
-        particleCount={400}
-        particleSpread={10}
-        speed={0.1}
-        particleBaseSize={100}
-        moveParticlesOnHover
-        alphaParticles={false}
-        disableRotation={false}
-        pixelRatio={1}
-      />
-      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-        <div className="space-y-3">
-          <h1 className="text-primary text-6xl text-center">
-            <SlideInDown as="span" className="text-3xl">
-              Hello, i'm
+    <div className="relative h-screen ">
+      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
+        <div className="space-y-6 text-center">
+          <h1 className="text-primary text-4xl md:text-6xl">
+            <SlideInDown as="span" className="text-muted text-3xl">
+              Hello, I'm
             </SlideInDown>{" "}
             <br />
             <ShuffleText
@@ -39,9 +27,16 @@ function Homepage() {
               className="text-indigo-500 font-semibold"
             />
             <br />
-            <SlideInLeft as="span">Front-End Developer</SlideInLeft>
           </h1>
-          <SlideInUp className="text-muted text-lg text-center max-w-md mx-auto">
+          <SlideInLeft className="flex items-center justify-center gap-4 w-full mx-auto">
+            <div className="w-27 h-px bg-indigo-700 dark:bg-indigo-700/40" />
+            <span className="text-3xl text-indigo-700">
+              Front-End Developer
+            </span>
+            <div className="w-27 h-px bg-indigo-700 dark:bg-indigo-700/40" />
+          </SlideInLeft>
+
+          <SlideInUp className="text-muted text-lg  max-w-md mx-auto">
             Specialized in clean UI, reusable component, and modern frontend
             workflows.
           </SlideInUp>
