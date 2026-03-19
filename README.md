@@ -130,14 +130,14 @@ npm run preview
 
 This project was built using amazing open-source libraries and community resources:
 
-[Motion](https://motion.dev/) - MIT License  
-[Three.js](https://threejs.org/) - MIT License  
-[Fontsource](https://fontsource.org/) - MIT License
-[shadcn/ui](https://ui.shadcn.com/) - MIT License  
-[React Bits](https://reactbits.dev/) - MIT + Commons Clause License
-[React Simple Icons](https://github.com/icons-pack/react-simple-icons) - MIT License  
-[Lucide](https://lucide.dev/) - ISC License  
-[EmailJS](https://www.emailjs.com/) - Free Tier
+- [Motion](https://motion.dev/) - MIT License
+- [Three.js](https://threejs.org/) - MIT License
+- [Fontsource](https://fontsource.org/) - MIT License
+- [shadcn/ui](https://ui.shadcn.com/) - MIT License
+- [React Bits](https://reactbits.dev/) - MIT + Commons Clause License
+- [React Simple Icons](https://github.com/icons-pack/react-simple-icons) - MIT License
+- [Lucide](https://lucide.dev/) - ISC License
+- [EmailJS](https://www.emailjs.com/) - Free Tier
 
 ---
 
