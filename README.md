@@ -2,6 +2,8 @@
 
 A modern, animated personal portfolio built with React, TypeScript, and Vite. Showcasing projects, skills, and a contact form — with smooth animations and a clean dark/light theme.
 
+- 🔗 Live Demo: https://personal-website-portfolio-teal.vercel.app/
+
 ---
 
 ## ✨ Features
