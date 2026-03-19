@@ -31,10 +31,6 @@ interface Project {
   title: string;
   subtitle: string;
   description: string;
-  category: string;
-  year: string;
-  accent: string;
-  glow: string;
   techStack: TechItem[];
   thumbnail: string;
   demoUrl: string;
@@ -65,10 +61,6 @@ const PROJECTS: Project[] = [
     subtitle: "Dashboard Task Management",
     description:
       " Implements reusable UI components, animated statistics, project filtering, and a structured folder architecture inspired by enterprise SaaS applications.",
-    category: "Productivity",
-    year: "2026",
-    accent: "#6EE7B7",
-    glow: "rgba(110,231,183,0.12)",
     techStack: [
       { name: "React", color: TECH_COLORS["React"], icon: SiReact },
       {
@@ -95,10 +87,6 @@ const PROJECTS: Project[] = [
     subtitle: "Landing Page SaaS",
     description:
       "Workora is a modern, responsive, and sleek SaaS landing page designed for teams and businesses.It showcases key features, pricing plans, and testimonials, giving users a premium experience to manage, track, and scale their work effortlessly. ",
-    category: "Marketing",
-    year: "2026",
-    accent: "#F9A8D4",
-    glow: "rgba(249,168,212,0.12)",
     techStack: [
       { name: "Html", color: TECH_COLORS["Html"], icon: SiHtml5 },
       {
@@ -125,10 +113,6 @@ const PROJECTS: Project[] = [
     subtitle: "Web E-Commerce",
     description:
       "Vireon is a case study of modern front-end architecture implementation using Zustand-based state management and a modular UI system with shadcn/ui. The website is built with React, TypeScript, and Vite. This project showcases product listing, category filtering, product search, shopping cart management, and a checkout page — all structured with clean and reusable components.",
-    category: "E-Commerce",
-    year: "2026",
-    accent: "#FCD34D",
-    glow: "rgba(252,211,77,0.12)",
     techStack: [
       { name: "React", color: TECH_COLORS["React"], icon: SiReact },
       {
@@ -176,13 +160,16 @@ export function ProjectCard() {
           />
 
           <CardContent className="p-5">
-            <h3 className="font-semibold text-[17px] leading-tight tracking-tight text-foreground">
+            <h3 className="font-semibold text-[17px] leading-tight tracking-tight text-foreground font-bebas">
               {project.title}
             </h3>
+            <p className="text-md text-muted font-semibold font-bebas my-2">
+              {project.subtitle}
+            </p>
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer group/desc mb-4">
-                  <p className="text-[13.5px] leading-relaxed text-muted-foreground font-light line-clamp-3">
+                  <p className="text-[13.5px] leading-relaxed text-muted-foreground font-light line-clamp-3 font-cormorant">
                     {project.description}
                   </p>
                   <div className="group/desc flex gap-2 justify-start items-center mt-2 text-muted-foreground/40 hover:text-muted-foreground ">
@@ -198,11 +185,11 @@ export function ProjectCard() {
               <DialogContent className="max-w-md">
                 <DialogHeader>
                   <DialogTitle>{project.title}</DialogTitle>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground font-bebas">
                     {project.subtitle}
                   </p>
                 </DialogHeader>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="text-sm leading-relaxed text-muted-foreground font-cormorant">
                   {project.description}
                 </p>
               </DialogContent>
@@ -213,7 +200,7 @@ export function ProjectCard() {
                 <Badge
                   key={t.name}
                   variant="outline"
-                  className="gap-1.5 rounded-md border-border/50  px-2 py-0.5 text-[12px] font-normal"
+                  className="gap-1.5 rounded-md border-border/50  px-2 py-0.5 text-sm font-normal font-mono"
                   style={{ background: `${t.color}40` }}
                 >
                   {t.icon ? (
@@ -289,10 +276,6 @@ export function ProjectCard() {
                 <ExternalLink size={24} />
               </a>
             </MotionButton>
-
-            <span className="ml-auto text-xs font-light text-muted-foreground/60">
-              {project.year}
-            </span>
           </CardFooter>
         </MotionCard>
       ))}

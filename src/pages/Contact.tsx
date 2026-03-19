@@ -114,7 +114,7 @@ function Contact() {
             ── Get In Touch ──
           </motion.p>
 
-          <h1 className="text-[clamp(4rem,12vw,9rem)] leading-none tracking-wider font-mono">
+          <h1 className="text-[clamp(4rem,12vw,9rem)] leading-none tracking-wider font-bebas">
             <GlitchText text="LET'S" />
             <br />
             <span className="text-indigo-500">
@@ -123,7 +123,7 @@ function Contact() {
           </h1>
 
           <motion.p
-            className="mt-6 text-sm max-w-md leading-relaxed"
+            className="mt-6 text-sm max-w-md leading-relaxed font-cormorant"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}

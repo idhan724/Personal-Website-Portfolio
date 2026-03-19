@@ -1,73 +1,149 @@
-# React + TypeScript + Vite
+# 🌐 Personal Portfolio — Idhan Khalas Saputra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated personal portfolio built with React, TypeScript, and Vite. Showcasing projects, skills, and a contact form — with smooth animations and a clean dark/light theme.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🎨 **Dark / Light Theme** — persisted via `localStorage` with system preference detection
+- 🌊 **Particle Background** — interactive WebGL particles powered by OGL
+- 🔤 **Shuffle Text Animation** — looping character scramble effect on the hero name
+- 🧲 **Magnetic Button** — cursor-following hover effect on the contact page
+- 🪟 **3D Illustration** — Three.js powered 3D scene on the About page
+- 🃏 **Tilt Card Effect** — perspective tilt on hover for interactive cards
+- 🎬 **Slide-in Animations** — directional entrance animations (up, down, left, right)
+- 📬 **Contact Form** — functional email sending via EmailJS
+- 💊 **Pill Navigation** — animated nav pill that follows the active route (GSAP)
+- 📱 **Responsive Design** — mobile-first layout with Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🗂️ Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── assets/               # Static assets
+├── components/
+│   ├── animation/
+│   │   ├── slide/        # SlideIn directional components
+│   │   ├── Illustration3D.tsx
+│   │   ├── Particles.tsx
+│   │   ├── ShuffleText.tsx
+│   │   └── variants.ts   # Framer Motion variants
+│   ├── ui/               # shadcn/ui components (Button, Badge, Card, etc.)
+│   ├── GlitchText.tsx
+│   ├── MagneticButton.tsx
+│   ├── PillNav.tsx
+│   ├── ProjectCard.tsx
+│   ├── SkillCard.tsx
+│   └── TiltField.tsx
+├── lib/
+│   ├── theme.ts          # Theme helpers
+│   └── utils.ts          # cn() utility
+├── pages/
+│   ├── Homepage.tsx
+│   ├── About.tsx
+│   ├── Project.tsx
+│   └── Contact.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Category      | Library                                        |
+| ------------- | ---------------------------------------------- |
+| Framework     | React 19 + TypeScript                          |
+| Build Tool    | Vite 7                                         |
+| Routing       | React Router DOM v6                            |
+| Animation     | Motion (Framer Motion) + GSAP                  |
+| 3D / WebGL    | Three.js + OGL                                 |
+| Styling       | Tailwind CSS v4                                |
+| UI Components | shadcn/ui + Radix UI                           |
+| Icons         | Lucide React + React Simple Icons              |
+| Email         | EmailJS                                        |
+| Fonts         | Inter, Bebas Neue, Cormorant Garamond, DM Mono |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js `>= 18`
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/personal-portfolio.git
+cd personal-portfolio
+
+# Install dependencies
+npm install
 ```
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+> Get your keys at [emailjs.com](https://www.emailjs.com/)
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📄 Pages
+
+| Route      | Description                                           |
+| ---------- | ----------------------------------------------------- |
+| `/`        | Hero section with animated name and CTA buttons       |
+| `/about`   | Skills, tech stack, and a 3D illustration             |
+| `/project` | Project cards with modal detail and live/GitHub links |
+| `/contact` | Contact form with EmailJS integration                 |
+
+---
+
+## 🤝 Credits
+
+This project was built using amazing open-source libraries and community resources:
+
+[Motion](https://motion.dev/) - MIT License  
+[Three.js](https://threejs.org/) - MIT License  
+[Fontsource](https://fontsource.org/) - MIT License
+[shadcn/ui](https://ui.shadcn.com/) - MIT License  
+[React Bits](https://reactbits.dev/) - MIT + Commons Clause License
+[React Simple Icons](https://github.com/icons-pack/react-simple-icons) - MIT License  
+[Lucide](https://lucide.dev/) - ISC License  
+[EmailJS](https://www.emailjs.com/) - Free Tier
+
+---
+
+## 👤 Author
+
+**Idhan Khalas Saputra**
+Front-End Developer · Specialized in clean UI, reusable components, and modern frontend workflows.
+
+---

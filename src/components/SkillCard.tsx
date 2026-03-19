@@ -59,14 +59,11 @@ function SkillCard() {
           >
             {item.tag}
           </Badge>
-          <CardTitle
-            className="text-primary text-lg font-light mb-2"
-            style={{ fontFamily: "Georgia,serif" }}
-          >
+          <CardTitle className="text-primary text-lg font-light mb-2 font-bebas">
             {item.title}
           </CardTitle>
 
-          <CardDescription className="font-mono text-[0.62rem] leading-loose text-muted whitespace-pre-line">
+          <CardDescription className="font-cormorant text-[0.82rem] leading-loose text-muted whitespace-pre-line">
             {item.body}
           </CardDescription>
         </MotionCard>

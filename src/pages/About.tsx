@@ -51,10 +51,7 @@ function About() {
   }, []);
 
   return (
-    <div
-      className="overflow-x-hidden "
-      style={{ fontFamily: "Georgia,'Times New Roman',serif" }}
-    >
+    <div className="overflow-x-hidden">
       <div className="relative z-10 max-w-5xl mx-auto px-6 pointer-events-none">
         <motion.div
           variants={container}
@@ -69,14 +66,14 @@ function About() {
               className="flex items-center gap-4 mb-6"
             >
               <div className="w-7 h-px bg-indigo-700 dark:bg-indigo-700/40" />
-              <h2 className="font-mono text-3xl tracking-[0.22em] uppercase text-indigo-500 dark:text-indigo-500/50">
+              <h2 className="font-bebas text-3xl tracking-[0.22em] uppercase text-indigo-500 dark:text-indigo-500/50">
                 About me
               </h2>
             </motion.div>
             <div className="space-y-5 mb-10">
               <motion.p
                 variants={itemInRight}
-                className="text-lg font-light text-muted leading-relaxed"
+                className="text-lg font-light text-muted leading-relaxed font-cormorant"
               >
                 Hi, I'm
                 <strong className="text-indigo-500 font-semibold">
@@ -88,7 +85,7 @@ function About() {
               </motion.p>
               <motion.p
                 variants={itemInRight}
-                className="text-lg font-light text-muted leading-relaxed"
+                className="text-lg font-light text-muted leading-relaxed font-cormorant"
               >
                 My work is centered around creating clean, efficient code and
                 polished interfaces. I may be at the start of my career, but my
@@ -101,7 +98,7 @@ function About() {
               </motion.p>
               <motion.p
                 variants={itemInRight}
-                className="text-lg font-light text-muted leading-relaxed"
+                className="text-lg font-light text-muted leading-relaxed font-cormorant"
               >
                 I am currently seeking my first professional opportunity to
                 contribute to a team, armed with a portfolio of{" "}
@@ -116,11 +113,8 @@ function About() {
               variants={itemInRight}
               className="inline-flex items-center gap-2 border dark:border-cyan-400/25 border-blue-700 px-3 py-1.5"
             >
-              <span
-                className="w-2 h-2 rounded-full bg-blue-700 dark:bg-cyan-400"
-                style={{ animation: "pulseDot 1.8s infinite" }}
-              />
-              <span className="font-mono text-md tracking-[0.14em] uppercase text-blue-700 dark:text-cyan-400">
+              <span className="w-2 h-2 rounded-full bg-blue-700 dark:bg-cyan-400 animate-pulse" />
+              <span className="font-bebas text-md tracking-[0.14em] uppercase text-blue-700 dark:text-cyan-400">
                 Open to opportunities
               </span>
             </motion.div>
