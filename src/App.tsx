@@ -4,7 +4,8 @@ import "./index.css";
 import Homepage from "@/pages/Homepage";
 import About from "@/pages/About";
 import Projects from "@/pages/Project";
-import Particles from "./components/animation/Particles";
+import Particles from "@/components/animation/Particles";
+import Contact from "@/pages/Contact";
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/project" element={<Projects />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </div>
   );
