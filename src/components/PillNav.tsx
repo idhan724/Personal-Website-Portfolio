@@ -158,6 +158,17 @@ const PillNav: React.FC<PillNavProps> = ({
     });
   };
 
+  const defaultStyle: React.CSSProperties = {
+    background: "var(--primary, #fff)",
+    color: "var(--color-secondary, #fff)",
+  };
+  const hoverIn = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.background = "var(--pill-bg)";
+    e.currentTarget.style.color = "var(--color-secondary, #fff)";
+  };
+  const hoverOut = (e: React.MouseEvent<HTMLAnchorElement>) =>
+    Object.assign(e.currentTarget.style, defaultStyle);
+
   const toggleMobileMenu = () => {
     const newState = !isMobileMenuOpen;
     setIsMobileMenuOpen(newState);
@@ -359,27 +370,13 @@ const PillNav: React.FC<PillNavProps> = ({
 
       <div
         ref={mobileMenuRef}
-        className="lg:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top max-w-sm"
+        className="lg:hidden absolute top-[3em] left-4 right-4 rounded-[27px]  z-[998] origin-top max-w-sm"
         style={{
           ...cssVars,
-          background: "var(--base, #f0f0f0)",
         }}
       >
         <ul className="list-none m-0 p-[3px] flex flex-col gap-[3px]">
           {items.map((item) => {
-            const defaultStyle: React.CSSProperties = {
-              background: "var(--pill-bg, #fff)",
-              color: "var(--pill-text, #fff)",
-            };
-            const hoverIn = (e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.currentTarget.style.background = "var(--base)";
-              e.currentTarget.style.color = "var(--hover-text, #fff)";
-            };
-            const hoverOut = (e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.currentTarget.style.background = "var(--pill-bg, #fff)";
-              e.currentTarget.style.color = "var(--pill-text, #fff)";
-            };
-
             const linkClasses =
               "block py-3 px-4 text-[16px] font-medium rounded-[50px] transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]";
 

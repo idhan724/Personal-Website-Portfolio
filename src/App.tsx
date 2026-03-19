@@ -8,7 +8,7 @@ import Particles from "@/components/animation/Particles";
 import Contact from "@/pages/Contact";
 
 function App() {
-  const location = useLocation();
+  const { pathname } = useLocation();
   return (
     <div className="relative">
       <PillNav
@@ -18,7 +18,7 @@ function App() {
           { label: "Project", href: "/project" },
           { label: "Contact", href: "/contact" },
         ]}
-        activeHref="/"
+        activeHref={pathname}
         className="custom-nav"
         ease="power2.easeOut"
         hoveredPillTextColor="#ffffff"
